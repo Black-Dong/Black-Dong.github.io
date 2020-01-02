@@ -1,5 +1,5 @@
 ---
-title: Java校招题(一)
+title: Java校招题(1) 
 date: 2020-01-01 10:45:40
 tags:
 	- Java基础
@@ -15,7 +15,7 @@ categories:
 
 <!-- more -->
 
-##### [什么是 Java 虚拟机？为什么 Java 被称为是” 平台无关的变成语言 “？](https://www.nowcoder.com/ta/review-java/review?tpId=31&tqId=21069&query=&asc=true&order=&page=1) 
+### [什么是 Java 虚拟机？为什么 Java 被称为是” 平台无关的变成语言 “？](https://www.nowcoder.com/ta/review-java/review?tpId=31&tqId=21069&query=&asc=true&order=&page=1) 
 
 > Java虚拟机是一个可以执行Java字节码的虚拟机进程。Java源文件被编译成能被Java虚拟机执行的字节码文件。
 >
@@ -23,7 +23,7 @@ categories:
 
 
 
-##### [JDK和JRE的区别是什么？](https://www.nowcoder.com/ta/review-java/review?query=&asc=true&order=&page=2 )
+### [JDK和JRE的区别是什么？](https://www.nowcoder.com/ta/review-java/review?query=&asc=true&order=&page=2 )
 
 > Java运行时环境(JRE)。它包括Java虚拟机、Java核心类库和支持文件。它不包含开发工具（JDK）--编译器、调试器和其他工具。
 >
@@ -31,7 +31,7 @@ categories:
 
 
 
-##### [ ”static”关键字是什么意思？Java中是否可以覆盖(override)一个private或者是static的方法？ ]( https://www.nowcoder.com/ta/review-java/review?query=&asc=true&order=&page=3 )
+### [ ”static”关键字是什么意思？Java中是否可以覆盖(override)一个private或者是static的方法？ ]( https://www.nowcoder.com/ta/review-java/review?query=&asc=true&order=&page=3 )
 
 > “static” 关键字表明一个成员变量或者是成员方法可以在没有所属的类的实例变量的情况下被访问。
 >
@@ -39,13 +39,13 @@ categories:
 
 
 
-##### [ 是否可以在static环境中访问非static变量？ ]( https://www.nowcoder.com/ta/review-java/review?query=&asc=true&order=&page=4 )
+### [ 是否可以在static环境中访问非static变量？ ]( https://www.nowcoder.com/ta/review-java/review?query=&asc=true&order=&page=4 )
 
 > static变量在Java中是属于类的，它在所有的实例中的值是一样的。当类被Java虚拟机载入的时候，会对static变量进行初始化。如果你的代码尝试不用实例来访问非static的变量，编译器会报错，因为这些变量还没有被创建出来，还没有跟任何实例关联上。
 
 
 
-##### [Java支持的数据类型有哪些？什么是自动拆装箱？]( https://www.nowcoder.com/ta/review-java/review?query=&asc=true&order=&page=5 )
+### [Java支持的数据类型有哪些？什么是自动拆装箱？]( https://www.nowcoder.com/ta/review-java/review?query=&asc=true&order=&page=5 )
 
 >Java语言支持的8种基本数据类型是：
 >
@@ -57,13 +57,13 @@ categories:
 
 
 
-##### [Java中的方法覆盖(Overriding)和方法重载(Overload)是什么意思？]( https://www.nowcoder.com/ta/review-java/review?query=&asc=true&order=&page=6 )
+### [Java中的方法覆盖(Overriding)和方法重载(Overload)是什么意思？]( https://www.nowcoder.com/ta/review-java/review?query=&asc=true&order=&page=6 )
 
 > Java中的方法重载发生在同一个类里面两个或者是多个方法的方法名相同但是参数不同的情况。与此相对，方法覆盖是说子类重新定义了父类的方法。方法覆盖必须有相同的方法名，参数列表和返回类型。覆盖者可能不会限制它所覆盖的方法的访问。
 
 
 
-##### [Java中，什么是构造方法？什么是构造方法重载？什么是复制构造方法？]( https://www.nowcoder.com/ta/review-java/review?query=&asc=true&order=&page=7 )
+### [Java中，什么是构造方法？什么是构造方法重载？什么是复制构造方法？]( https://www.nowcoder.com/ta/review-java/review?query=&asc=true&order=&page=7 )
 
 >  当新对象被创建的时候，构造方法会被调用。每一个类都有构造方法。在程序员没有给类提供构造方法的情况下，Java编译器会为这个类创建一个默认的构造方法。
 > Java中构造方法重载和方法重载很相似。可以为一个类创建多个构造方法。每一个构造方法必须有它自己唯一的参数列表。
@@ -71,13 +71,13 @@ categories:
 
 
 
-##### [Java支持多继承么？]( https://www.nowcoder.com/ta/review-java/review?query=&asc=true&order=&page=8 )
+### [Java支持多继承么？]( https://www.nowcoder.com/ta/review-java/review?query=&asc=true&order=&page=8 )
 
 > Java中类不支持多继承，只支持单继承（即一个类只有一个父类）。 但是java中的接口支持多继承，，即一个子接口可以有多个父接口。（接口的作用是用来扩展对象的功能，一个子接口继承多个父接口，说明子接口扩展了多个功能，当类实现接口时，类就扩展了相应的功能）。
 
 
 
-##### [接口和抽象类的区别是什么？]( https://www.nowcoder.com/ta/review-java/review?query=&asc=true&order=&page=9 )
+### [接口和抽象类的区别是什么？]( https://www.nowcoder.com/ta/review-java/review?query=&asc=true&order=&page=9 )
 
 >  Java提供和支持创建抽象类和接口。它们的实现有共同点，不同点在于：
 >
@@ -94,7 +94,7 @@ categories:
 
 
 
-##### [什么是值传递和引用传递？]( https://www.nowcoder.com/ta/review-java/review?query=&asc=true&order=&page=10 )
+### [什么是值传递和引用传递？]( https://www.nowcoder.com/ta/review-java/review?query=&asc=true&order=&page=10 )
 
 > 值传递是对基本型变量而言的,传递的是该变量的一个副本,改变副本不影响原变量.
 >
