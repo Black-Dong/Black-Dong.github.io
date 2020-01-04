@@ -80,5 +80,16 @@ categories:
 
 ### [ 串行(serial)收集器和吞吐量(throughput)收集器的区别是什么？ ](https://www.nowcoder.com/ta/review-java/review?query=&asc=true&order=&page=40)
 
-> 吞吐量收集器使用并行版本的新生代垃圾收集器，它用于中等规模和大规模数据的应用程序。而串行收集器对大多数的小应用(在现代处理器上需要大概100M左右的内存)就足够了。 
-
+> 链接：https://www.nowcoder.com/questionTerminal/46b6030921164ab0a3cb3dbd6d64f01a来源：牛客网
+>
+> ### Serial 收集器
+>
+> - Serial 收集器是历史悠久，最基本的收集器。它是一个单线程的收集器（说明：这里的单线程不仅仅是指收集器工作时使用一个CPU或者一条收集线程去收集，并且Serial工作时，必须暂停其他所有的工作线程，也就是“stop the world”，直到垃圾收集完成。）Serial是JVM运行在Client模式默认的新生代收集器。
+>
+> ### throughput收集器
+>
+> - 也叫做Parallel Scavenge 收集器，它的目标是达到一个可控制的吞吐量(throughput)，（说明：吞吐量就是CPU用于执行代码的时间和CPU总共消耗时间的比值，即：吞吐量 = 运行代码时间 / (运行代码时间 + 垃圾收集器工作时间)），JVM提供了两个参数以精确的控制吞吐量，-XX:MaxGCPauseMillis 最大收集停顿时间；-XX:GCTimeRatio 垃圾收集时间占总时间的比例。
+>
+> ### 总结
+>
+> - 了解了他们各自的特性，那么他们之间的不同点就显而易见了，Serial收集器工作时 "stop the world",简单而高效。而throughput收集器更关注总体的吞吐量，收集效果和性能总是密切关联的。
