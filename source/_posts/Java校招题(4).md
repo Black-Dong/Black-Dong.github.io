@@ -80,6 +80,8 @@ categories:
 
 ### [ 串行(serial)收集器和吞吐量(throughput)收集器的区别是什么？ ](https://www.nowcoder.com/ta/review-java/review?query=&asc=true&order=&page=40)
 
+> 吞吐量收集器使用并行版本的新生代垃圾收集器，它用于中等规模和大规模数据的应用程序。而串行收集器对大多数的小应用(在现代处理器上需要大概100M左右的内存)就足够了。 
+>
 > 链接：https://www.nowcoder.com/questionTerminal/46b6030921164ab0a3cb3dbd6d64f01a来源：牛客网
 >
 > ### Serial 收集器
