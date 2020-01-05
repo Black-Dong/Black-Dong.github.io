@@ -3,7 +3,7 @@ title: Java校招题(5)
 date: 2020-01-05 09:24:17
 tags:
 	- Java基础
-	- 面试
+	- 面试题
 categories:
 	- Java
 ---
