@@ -1,6 +1,209 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>SpringBoot整合Swagger</title>
+    <url>/2020/01/08/SpringBoot%E6%95%B4%E5%90%88Swagger/</url>
+    <content><![CDATA[<ul>
+<li>Swagger是一款可以让你更方便、更流畅、更具格式化的书写API文档的框架。</li>
+<li>SpringBoot与Swagger整合。</li>
+</ul>
+<a id="more"></a>
+
+<h3 id="Swagger官网"><a href="#Swagger官网" class="headerlink" title="Swagger官网"></a><a href="https://swagger.io/" target="_blank" rel="noopener">Swagger官网</a></h3><blockquote>
+<p>英语比较好的，可以看看官网。</p>
+</blockquote>
+<h3 id="首先创建一个SpringBoot的项目"><a href="#首先创建一个SpringBoot的项目" class="headerlink" title="首先创建一个SpringBoot的项目"></a>首先创建一个SpringBoot的项目</h3><blockquote>
+<ul>
+<li>各种方式创建一个SpringBoot项目，此处不讲。</li>
+</ul>
+</blockquote>
+<h3 id="引入Swagger"><a href="#引入Swagger" class="headerlink" title="引入Swagger"></a>引入Swagger</h3><blockquote>
+<ul>
+<li><p>在pom文件中引入依赖(版本自己选择)</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!-- swagger --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;io.springfox&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;springfox-swagger2&lt;&#x2F;artifactId&gt;</span><br><span class="line">    &lt;version&gt;2.7.0&lt;&#x2F;version&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- swagger-ui 可视化的查看api --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;io.springfox&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;springfox-swagger-ui&lt;&#x2F;artifactId&gt;</span><br><span class="line">    &lt;version&gt;2.7.0&lt;&#x2F;version&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编辑Swagger的配置类</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">@EnableSwagger2</span><br><span class="line">public class SwaggerConfig &#123;</span><br><span class="line"></span><br><span class="line">    @Bean</span><br><span class="line">    public Docket api()&#123;</span><br><span class="line">        return new Docket(DocumentationType.SWAGGER_2)</span><br><span class="line">                .select()</span><br><span class="line">                .apis(RequestHandlerSelectors.any())</span><br><span class="line">                .paths(PathSelectors.any())</span><br><span class="line">                .build();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Swagger常用注解</p>
+<ul>
+<li><p>Contoller相关注解</p>
+<ul>
+<li>@Api</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">注解属性</th>
+<th align="center">类型</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">tags</td>
+<td align="center">String[]</td>
+<td align="center">控制器标签。</td>
+</tr>
+<tr>
+<td align="center">description</td>
+<td align="center">String</td>
+<td align="center">控制器描述（该字段被申明为过期）。</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>接口相关</p>
+<ul>
+<li>@ApiOperation</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">注解属性</th>
+<th align="center">类型</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">value</td>
+<td align="center">String</td>
+<td align="center">接口说明。</td>
+</tr>
+<tr>
+<td align="center">notes</td>
+<td align="center">String</td>
+<td align="center">接口发布说明。</td>
+</tr>
+<tr>
+<td align="center">tags</td>
+<td align="center">Stirng[]</td>
+<td align="center">标签。</td>
+</tr>
+<tr>
+<td align="center">response</td>
+<td align="center">Class&lt;?&gt;</td>
+<td align="center">接口返回类型。</td>
+</tr>
+<tr>
+<td align="center">httpMethod</td>
+<td align="center">String</td>
+<td align="center">接口请求方式。</td>
+</tr>
+<tr>
+<td align="center">* @ApiIgnore: Swagger 文档不会显示拥有该注解的接口</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">* @ApilmplicitParams: 用于描述接口的非对象参数集</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">* @ApiImplicitParam: 用于描述接口的非对象参数，一般与 @ApiImplicitParams 组合使用</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">注解属性</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">paramType</td>
+<td align="left">查询参数类型，实际上就是参数放在那里。取值：path：以地址的形式提交数据，根据 id 查询用户的接口就是这种形式传参。query：Query string 的方式传参。header：以流的形式提交。form：以 Form 表单的形式提交。</td>
+</tr>
+<tr>
+<td align="center">dataType</td>
+<td align="left">参数的数据类型。取值：Long、String</td>
+</tr>
+<tr>
+<td align="center">name</td>
+<td align="left">参数名字。</td>
+</tr>
+<tr>
+<td align="center">value</td>
+<td align="left">参数意义的描述。</td>
+</tr>
+<tr>
+<td align="center">required</td>
+<td align="left">是否必填。取值：true：必填参数。false：非必填参数。</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>Model相关接口</p>
+<ul>
+<li>@ApiModel: 可设置接口相关实体的描述。 </li>
+<li>@ApiModelProperty: 可设置实体属性的相关描述。 </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>注解属性</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>value</td>
+<td>String</td>
+<td>字段说明。</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>重写字段名称。</td>
+</tr>
+<tr>
+<td>dataType</td>
+<td>Stirng</td>
+<td>重写字段类型。</td>
+</tr>
+<tr>
+<td>required</td>
+<td>boolean</td>
+<td>是否必填。</td>
+</tr>
+<tr>
+<td>example</td>
+<td>Stirng</td>
+<td>举例说明。</td>
+</tr>
+<tr>
+<td>hidden</td>
+<td>boolean</td>
+<td>是否在文档中隐藏该字段。</td>
+</tr>
+<tr>
+<td>allowEmptyValue</td>
+<td>boolean</td>
+<td>是否允许为空。</td>
+</tr>
+<tr>
+<td>allowableValues</td>
+<td>String</td>
+<td>该字段允许的值，当我们 API 的某个参数为枚举类型时，使用这个属性就可以清楚地告诉 API 使用者该参数所能允许传入的值。</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="推荐阅读在-Spring-Boot-项目中使用-Swagger-文档或springboot快速集成swagger"><a href="#推荐阅读在-Spring-Boot-项目中使用-Swagger-文档或springboot快速集成swagger" class="headerlink" title="推荐阅读在 Spring Boot 项目中使用 Swagger 文档或springboot快速集成swagger"></a>推荐阅读<a href="https://www.ibm.com/developerworks/cn/java/j-using-swagger-in-a-spring-boot-project/index.html" target="_blank" rel="noopener">在 Spring Boot 项目中使用 Swagger 文档</a>或<a href="https://juejin.im/post/5cf08d65f265da1bb13f17a6#heading-14" target="_blank" rel="noopener">springboot快速集成swagger</a></h3>]]></content>
+      <categories>
+        <category>Spring</category>
+        <category>SpringBoot</category>
+      </categories>
+      <tags>
+        <tag>Spring</tag>
+        <tag>SpringBoot</tag>
+        <tag>Swagger</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java面试文档推荐下载</title>
     <url>/2020/01/06/Java%E6%96%87%E6%A1%A3%E6%8E%A8%E8%8D%90%E4%B8%8B%E8%BD%BD/</url>
     <content><![CDATA[<ul>
