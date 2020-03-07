@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Java类的五大成分</title>
+    <url>/2020/03/07/Java%E7%B1%BB%E7%9A%84%E4%BA%94%E5%A4%A7%E6%88%90%E5%88%86/</url>
+    <content><![CDATA[<ul>
+<li>Java中的类有且只有五大成分</li>
+</ul>
+<a id="more"></a>
+
+<h3 id="Java中的类"><a href="#Java中的类" class="headerlink" title="Java中的类"></a>Java中的类</h3><h4 id="五大成分"><a href="#五大成分" class="headerlink" title="五大成分"></a>五大成分</h4><blockquote>
+<ul>
+<li>成员变量（Field：描述类和对象的属性信息）</li>
+<li>成员方法（Method：描述类或对象的行为信息）</li>
+<li>构造器（Constructor：初始话一个类的对象，并返回引用）</li>
+<li>方法块</li>
+<li>内部类</li>
+</ul>
+<blockquote>
+<p>以下代码正确么，请说明原因</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class ClassDemo &#123;</span><br><span class="line">	System.out.println(&quot;helloWord&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>答：错误，应为类中只有五大成分，System.out.println(“”); 属于执行方法，不是五大成分就会报错。</p>
+</blockquote>
+</blockquote>
+<h4 id="构造器"><a href="#构造器" class="headerlink" title="构造器"></a>构造器</h4><blockquote>
+<p>作用：初始话一个类的对象并返回引用。</p>
+<p>格式：</p>
+<blockquote>
+<p>修饰符 类名( 形参… ) {</p>
+<p>}</p>
+</blockquote>
+<p>构造器初始化对象的格式：</p>
+<blockquote>
+<p>类名 对象名称 = new 构造器;</p>
+</blockquote>
+<p>注意：</p>
+<blockquote>
+<p>一个类会默认自带一个无参构造器。</p>
+<p>但如果自己写了一个构造器，那么无参构造器就被覆盖了！！！</p>
+</blockquote>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java基础</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>SpringBoot整合MyBatis Generator</title>
     <url>/2020/02/16/SpringBoot%E6%95%B4%E5%90%88mybatis-generator/</url>
     <content><![CDATA[<ul>
