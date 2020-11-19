@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>剑指Offer-03数组中重复的数字</title>
+    <url>/2020/11/19/%E5%89%91%E6%8C%87Offer-03%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/</url>
+    <content><![CDATA[<ul>
+<li>一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。</li>
+</ul>
+<a id="more"></a>
+
+
+<h3 id="剑指Offer-03数组中重复的数字"><a href="#剑指Offer-03数组中重复的数字" class="headerlink" title="剑指Offer-03数组中重复的数字"></a>剑指Offer-03数组中重复的数字</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：[2, 3, 1, 0, 2, 5, 3]</span><br><span class="line">输出：2 或 3</span><br><span class="line">限制：2 &lt;&#x3D; n &lt;&#x3D; 100000</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>思路 1: </p>
+<blockquote>
+<p>新建一个最大值长度的数组，将值放入值下标对应位置，若在放置过程中出现对应下标已有值，则直接返回。</p>
+</blockquote>
+<p>思路 2:</p>
+<blockquote>
+<p>将数组中的值放入一个Map中（当Key）或Set中，使用containsKey或contains判断是否存在，存在则直接返回，不存在放入。<br>具体实现:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findRepeatNumber</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">       Set&lt;Integer&gt; tempSet = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> num : nums) &#123;</span><br><span class="line">           <span class="keyword">if</span> (tempSet.contains(num)) &#123;</span><br><span class="line">               <span class="keyword">return</span> num;</span><br><span class="line">           &#125;</span><br><span class="line">           tempSet.add(num);</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line">   &#125;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+</blockquote>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Java</category>
+        <category>剑指Offer</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>剑指Offer</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java中的this关键字</title>
     <url>/2020/03/07/Java%E4%B8%AD%E7%9A%84this%E5%85%B3%E9%94%AE%E5%AD%97/</url>
     <content><![CDATA[<ul>
@@ -22,6 +54,7 @@
 ]]></content>
       <categories>
         <category>Java</category>
+        <category>Java 基础</category>
       </categories>
       <tags>
         <tag>Java基础</tag>
@@ -71,6 +104,7 @@
 ]]></content>
       <categories>
         <category>Java</category>
+        <category>Java 基础</category>
       </categories>
       <tags>
         <tag>Java基础</tag>
@@ -384,6 +418,7 @@
 ]]></content>
       <categories>
         <category>Java</category>
+        <category>Java 基础</category>
       </categories>
       <tags>
         <tag>Java基础</tag>
@@ -440,6 +475,7 @@
 ]]></content>
       <categories>
         <category>Java</category>
+        <category>Java 基础</category>
       </categories>
       <tags>
         <tag>Java基础</tag>
@@ -517,6 +553,7 @@
 ]]></content>
       <categories>
         <category>Java</category>
+        <category>Java 基础</category>
       </categories>
       <tags>
         <tag>Java基础</tag>
@@ -619,6 +656,7 @@
 ]]></content>
       <categories>
         <category>Java</category>
+        <category>Java 基础</category>
       </categories>
       <tags>
         <tag>Java基础</tag>
@@ -718,6 +756,7 @@
 ]]></content>
       <categories>
         <category>Java</category>
+        <category>Java 基础</category>
       </categories>
       <tags>
         <tag>Java基础</tag>
@@ -778,6 +817,7 @@
 ]]></content>
       <categories>
         <category>Java</category>
+        <category>Java 基础</category>
       </categories>
       <tags>
         <tag>Java基础</tag>
