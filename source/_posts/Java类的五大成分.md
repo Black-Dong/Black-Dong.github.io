@@ -6,6 +6,7 @@ tags:
 	- Java碎片知识点
 categories:
 	- Java
+	- Java 基础
 ---
 
 * Java中的类有且只有五大成分
